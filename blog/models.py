@@ -10,6 +10,8 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    # Note: Index ordering is not supported on MySQL. If you use MySQL for the database,
+    # a descending index will be created as a normal index.
     class Meta:
         ordering = ['-publish']
         indexes = [
