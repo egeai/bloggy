@@ -9,9 +9,9 @@ def post_list(request):
                   {'posts': posts})
 
 
-def post_detail(request, id_):
+def post_detail(request, id):
     post = get_object_or_404(Post,
-                             id=id_,
+                             id=id,
                              status=Post.Status.PUBLISHED)
     return render(request,
                   'blog/post/detail.html',
